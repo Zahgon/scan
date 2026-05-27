@@ -114,23 +114,26 @@ func endpoints(conf *connConf) (protocol.DriverEndpoint, protocol.EngineEndpoint
 
 // The uri need to have the following syntax:
 //
-//   [PROTOCOL_SPECFIIC*]DBNAME/USER/PASSWD
+//	[PROTOCOL_SPECFIIC*]DBNAME/USER/PASSWD
 //
 // where protocol spercific part may be empty (this means connection to
 // local server using default protocol). Currently possible forms:
 //
-//   DBNAME/USER/PASSWD
-//   unix:SOCKPATH*DBNAME/USER/PASSWD
-//   unix:SOCKPATH,OPTIONS*DBNAME/USER/PASSWD
-//   tcp:ADDR*DBNAME/USER/PASSWD
-//   tcp:ADDR,OPTIONS*DBNAME/USER/PASSWD
-//   cloudsql:INSTANCE*DBNAME/USER/PASSWD
+//	DBNAME/USER/PASSWD
+//	unix:SOCKPATH*DBNAME/USER/PASSWD
+//	unix:SOCKPATH,OPTIONS*DBNAME/USER/PASSWD
+//	tcp:ADDR*DBNAME/USER/PASSWD
+//	tcp:ADDR,OPTIONS*DBNAME/USER/PASSWD
+//	cloudsql:INSTANCE*DBNAME/USER/PASSWD
 //
 // OPTIONS can contain comma separated list of options in form:
-//   opt1=VAL1,opt2=VAL2,boolopt3,boolopt4
+//
+//	opt1=VAL1,opt2=VAL2,boolopt3,boolopt4
+//
 // Currently implemented options:
-//   laddr   - local address/port (eg. 1.2.3.4:0)
-//   timeout - connect timeout in format accepted by time.ParseDuration
+//
+//	laddr   - local address/port (eg. 1.2.3.4:0)
+//	timeout - connect timeout in format accepted by time.ParseDuration
 func parseConnectionURI(uri string) (*connConf, error) {
 	c := &connConf{}
 

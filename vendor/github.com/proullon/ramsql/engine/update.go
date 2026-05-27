@@ -12,15 +12,16 @@ import (
 
 /*
 |-> update
-	|-> account
-	|-> set
-	      |-> email
-					|-> =
-					|-> roger@gmail.com
-  |-> where
-        |-> id
-					|-> =
-					|-> 2
+
+		|-> account
+		|-> set
+		      |-> email
+						|-> =
+						|-> roger@gmail.com
+	  |-> where
+	        |-> id
+						|-> =
+						|-> 2
 */
 func updateExecutor(e *Engine, updateDecl *parser.Decl, conn protocol.EngineConn) error {
 	var num int64
@@ -74,7 +75,8 @@ func updateExecutor(e *Engine, updateDecl *parser.Decl, conn protocol.EngineConn
 }
 
 /*
-	|-> set
+|-> set
+
 	      |-> email
 					|-> =
 					|-> roger@gmail.com

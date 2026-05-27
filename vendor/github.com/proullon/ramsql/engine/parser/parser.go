@@ -207,18 +207,18 @@ func (p *parser) parseUpdate() (*Instruction, error) {
 //
 // The generated AST is as follows:
 //
-//  |-> "INSERT" (InsertToken)
-//      |-> "INTO" (IntoToken)
-//          |-> table name
-//              |-> column name
-//              |-> (...)
-//      |-> "VALUES" (ValuesToken)
-//          |-> "(" (BracketOpeningToken)
-//              |-> value
-//              |-> (...)
-//          |-> (...)
-//      |-> "RETURNING" (ReturningToken) (optional)
-//          |-> column name
+//	|-> "INSERT" (InsertToken)
+//	    |-> "INTO" (IntoToken)
+//	        |-> table name
+//	            |-> column name
+//	            |-> (...)
+//	    |-> "VALUES" (ValuesToken)
+//	        |-> "(" (BracketOpeningToken)
+//	            |-> value
+//	            |-> (...)
+//	        |-> (...)
+//	    |-> "RETURNING" (ReturningToken) (optional)
+//	        |-> column name
 func (p *parser) parseInsert() (*Instruction, error) {
 	i := &Instruction{}
 

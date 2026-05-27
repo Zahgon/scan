@@ -2,15 +2,17 @@ package engine
 
 import (
 	"fmt"
+	"sort"
+
 	"github.com/proullon/ramsql/engine/log"
 	"github.com/proullon/ramsql/engine/parser"
 	"github.com/proullon/ramsql/engine/protocol"
-	"sort"
 )
 
-//    |-> order
-//        |-> age
-//        |-> desc
+// |-> order
+//
+//	|-> age
+//	|-> desc
 func orderbyExecutor(attr *parser.Decl, tables []*Table) (selectFunctor, error) {
 	f := &orderbyFunctor{}
 
@@ -225,8 +227,8 @@ func (o *genericOrderer) Feed(_ Value, vrow virtualRow) error {
 					return 0
 				}
 			}(ob.desc)
-		//default:
-		//	panic(fmt.Sprintf("wrong type %T for column %s", vrow[ob.column].v, ob.column))
+			//default:
+			//	panic(fmt.Sprintf("wrong type %T for column %s", vrow[ob.column].v, ob.column))
 		}
 	}
 

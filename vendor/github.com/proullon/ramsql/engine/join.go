@@ -216,14 +216,14 @@ func join(row virtualRow, relations map[string]*Relation, predicates []joiner, p
 
 /*
 -> join
-       |-> user_project
-       |-> on
-           |-> project_id
-               |-> user_project
-           |-> =
-           |-> id
-               |-> project
 
+	|-> user_project
+	|-> on
+	    |-> project_id
+	        |-> user_project
+	    |-> =
+	    |-> id
+	        |-> project
 */
 func joinExecutor(decl *parser.Decl) (joiner, error) {
 	decl.Stringy(0)

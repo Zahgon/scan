@@ -2,10 +2,11 @@ package engine
 
 import (
 	"fmt"
-	"github.com/proullon/ramsql/engine/log"
-	"github.com/proullon/ramsql/engine/parser"
 	"strconv"
 	"time"
+
+	"github.com/proullon/ramsql/engine/log"
+	"github.com/proullon/ramsql/engine/parser"
 )
 
 // Operator compares 2 values and return a boolean
